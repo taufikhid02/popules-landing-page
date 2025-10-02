@@ -58,9 +58,8 @@
   queryKey: ["feedItems", offset, limit],
 })
 
-
+//
 const feedItems = computed(() => feedsData.value ?? [])
-
 
 </script>
 <template>
