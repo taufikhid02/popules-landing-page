@@ -19,6 +19,10 @@ import { ref } from 'vue'
             }
         })
     }
+    const dropdownMore = ref(false)
+    const toggleDropdownMore = () => {
+        dropdownMore.value = !dropdownMore.value
+    }
 </script>
 
 <template>
@@ -29,7 +33,7 @@ import { ref } from 'vue'
             <!-- Navigation Menu -->
             <div class="w-full h-fit flex flex-col gap-y-1">
                 <div v-for="(menu, index) in menus" :key="index">
-                    <div v-if="menu.visible" class="flex w-full bg-white text-black p-2 flex-row items-center justify-start gap-3 rounded-2xl text-lg cursor-pointer hover:bg-gray-100 duration-200">
+                    <div v-if="menu.visible" class="flex w-full bg-white text-black font-medium p-2 flex-row items-center justify-start gap-3 rounded-2xl text-lg cursor-pointer hover:bg-gray-100 duration-200">
                         <i :class="['pi', menu.icon ]" style="font-size: 1.3rem; color: gray;"></i>
                         <h1>{{ menu.label }}</h1>
                     </div>
@@ -53,9 +57,20 @@ import { ref } from 'vue'
         </div>
         
         <!-- Sidebar Footer -->
-        <div class="flex w-full h-1/10 self-end">
+        <div class="flex relative w-full h-1/10 self-end">
             <!-- More -->
-            <div class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg">
+            <div v-if="dropdownMore" class="absolute bottom-full origin-bottom mb-1 h-fit max-h-[300px] w-[200px] p-4 gap-1 bg-white border-2 border-gray-400/20 flex flex-col overflow-y-auto rounded-lg">
+                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                    <h1>About Us</h1>
+                </div>
+                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                    <h1>Privacy Policy</h1>
+                </div>
+                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                    <h1>About Us</h1>
+                </div>
+            </div>
+            <div @click="toggleDropdownMore" class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg cursor-pointer">
                 <i class="pi pi-bars" style="font-size: 1.3rem; color: gray;"></i>
                 <h1>More</h1>
             </div>

@@ -3,7 +3,12 @@ import { ref } from 'vue'
 import Sidebar from './components/Sidebar.vue'
 import popules_logo from './assets/popules_logo.svg'
 import Card from './components/Card.vue'
+import DropdownMenu from './components/DropdownMenu.vue'
 const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "Finance", "Lifestyle", "Travel", "Makeup", "Fitness"]
+const dropdown = ref(false)
+const toggleDropdown = () => {
+  dropdown.value = !dropdown.value
+}
 
 </script>
 
@@ -11,18 +16,20 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
   <!-- Parent Div -->
   <div class="bg-white h-screen w-screen flex flex-col">
     <!-- Header -->
-    <div class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
+    <header class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
       <!-- Header Logo -->
       <div class="h-full w-fit flex items-center justify-center">      
         <img :src="popules_logo" alt="/" class="h-8 w-full md:h-11 pl-5"/>
       </div>
 
       <!-- Header Icons (Mobile) -->
-      <div class="flex flex-row h-fit items-center justify-evenly gap-4 gap-x-8 p-4 lg:hidden">
+      <div class="relative flex flex-row h-fit items-center justify-evenly gap-4 gap-x-8 p-4 lg:hidden">
         <i class="pi pi-search" style="font-size: 1.3rem; color: gray;"></i>
-        <i class="pi pi-bars" style="font-size: 1.3rem; color: gray;"></i>
+        <i class="pi pi-bars cursor-pointer" @click="toggleDropdown" style="font-size: 1.3rem; color: gray;"></i>
+        <DropdownMenu :dropdown="dropdown"/>
       </div>
 
+      
 
       <!-- Search Bar (Large) -->
       <div class="hidden h-full w-[500px] lg:flex items-center justify-evenly p-3">
@@ -42,7 +49,7 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
           <i class="pi pi pi-bell" style="font-size: 1.3rem; color: gray;"></i>
         </div>
       </div>
-    </div>
+    </header>
 
     <!-- Body -->
     <div class="flex flex-1 bg-white w-full h-full ">
@@ -63,37 +70,11 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
         </div>
 
         <!-- Posts -->
-        <div class="flex flex-1 w-full h-full px-4 overflow-y-auto overflow-x-hidden">
-          <div class="gap-4 h-[560px] w-full bg-red-400 overflow-y-auto space-y-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <main class="flex flex-1 w-full h-full px-4 overflow-y-auto overflow-x-hidden">
+          <div class="gap-4 h-[560px] w-full  overflow-y-auto space-y-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <Card/>
-             <!-- <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[250px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[208px]  break-inside-avoid">hi</div> 
-             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[60px] break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[240px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[210px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[170px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div>          
-             <div class="bg-black flex justify-center items-center p-4 h-[240px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[207px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[70px] break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[80px] break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[90px] break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[201px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[270px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[300px]  break-inside-avoid">hi</div>
-             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div> -->
-
-            
-            </div> 
-        </div>
+          </div> 
+        </main>
       </div>
 
     </div>
