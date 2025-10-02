@@ -23,6 +23,15 @@ import { ref } from 'vue'
     const toggleDropdownMore = () => {
         dropdownMore.value = !dropdownMore.value
     }
+    const aboutUsDialog = ref(false)
+    const privacyPolicyDialog = ref(false)
+    const toggleAboutUsDialog = () => {
+        aboutUsDialog.value = !aboutUsDialog.value
+    }
+    const togglePrivacyPolicyDialog = () => {
+        privacyPolicyDialog.value = !privacyPolicyDialog.value
+    }
+
 </script>
 
 <template>
@@ -59,15 +68,26 @@ import { ref } from 'vue'
         <!-- Sidebar Footer -->
         <div class="flex relative w-full h-1/10 self-end">
             <!-- More -->
-            <div v-if="dropdownMore" class="absolute bottom-full origin-bottom mb-1 h-fit max-h-[300px] w-[200px] p-4 gap-1 bg-white border-2 border-gray-400/20 flex flex-col overflow-y-auto rounded-lg">
-                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <div v-if="dropdownMore" class="absolute bottom-full origin-bottom mb-1 h-fit max-h-[300px] w-fit p-4 gap-1 bg-white border-2 border-gray-400/20 flex flex-col items-center overflow-y-auto rounded-lg">
+                <div @click="toggleAboutUsDialog" class="text-black font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
                     <h1>About Us</h1>
                 </div>
-                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
                     <h1>Privacy Policy</h1>
                 </div>
-                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
-                    <h1>About Us</h1>
+                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
+                    <i class="pi pi-sun" style="font-size: 1rem"></i>
+                    <div 
+                        @click="enabled = !enabled"
+                        class="w-12 h-6 flex items-center rounded-full cursor-pointer transition-colors duration-300"
+                        :class="enabled ? 'bg-green-500' : 'bg-gray-300'"
+                    >
+                        <div 
+                        class="w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300"
+                        :class="enabled ? 'translate-x-6' : 'translate-x-1'"
+                        ></div>
+                    </div>
+                    <i class="pi pi-moon" style="font-size: 1rem"></i>
                 </div>
             </div>
             <div @click="toggleDropdownMore" class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg cursor-pointer">

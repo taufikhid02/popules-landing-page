@@ -35,11 +35,11 @@
     // ])
 
     const offset = ref(0)
-    const limit = ref(30)
+    const limit = ref(15)
 
     //Fetch chat sessions
     const {
-        data: fetchFeeds,
+        data: feedsData,
         isPending: isPendingFeeds,
         isSuccess: isSuccessFeeds,
         isError: isErrorFeeds,
@@ -58,17 +58,18 @@
   queryKey: ["feedItems", offset, limit],
 })
 
-const feedItems = computed(() => fetchFeeds.value ?? [])
+
+const feedItems = computed(() => feedsData.value ?? [])
 
 
 </script>
 <template>
     <div>
-        <div v-if="isPendingFeeds" class="text-black flex items-center justify-center text-2xl">Loading...</div>
-        <div v-else-if="isErrorFeeds">{{ errorFeeds.message }}</div>
+        <div v-if="isPendingFeeds" class="flex w-full h-full text-black items-center justify-center text-2xl">Loading...</div>
+        <div v-else-if="isErrorFeeds" class="text-red-600 flex items-center justify-center text-2xl">{{ errorFeeds.message }}</div>
         <MasonryWall v-else-if="isSuccessFeeds" :items="feedItems" :ssr="true" :column-width="200" class="bg-white" :gap="16">
             <template #default="{ item }">
-                <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full h-fit max-w-[300px] ">
+                <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full h-fit max-w-[300px] object-cover">
                 <div class="p-4 h-fit w-full flex flex-col gap-y-2 text-black">
                     <h1>{{ item?.title }}</h1>
                     <div class="h-f w-full flex flex-row items-center justify-between">

@@ -4,17 +4,27 @@ import Sidebar from './components/Sidebar.vue'
 import popules_logo from './assets/popules_logo.svg'
 import Card from './components/Card.vue'
 import DropdownMenu from './components/DropdownMenu.vue'
+import AboutUsDialog from './components/AboutUsDialog.vue'
+import PrivacyPolicyDialog from './components/PrivacyPolicyDialog.vue'
+import profilepicture from './assets/profilepicture.jpg'
+
+
 const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "Finance", "Lifestyle", "Travel", "Makeup", "Fitness"]
 const dropdown = ref(false)
 const toggleDropdown = () => {
   dropdown.value = !dropdown.value
 }
+const showAboutUsDialog = ref(false)
+const showPrivacyPolicyDialog = ref(false)
 
 </script>
 
 <template>
   <!-- Parent Div -->
-  <div class="bg-white h-screen w-screen flex flex-col">
+  <div class="bg-white h-screen w-screen flex flex-col items-center justify-center">
+    <AboutUsDialog :show="showAboutUsDialog" @close="showModal = false"/>
+    <PrivacyPolicyDialog :show="showPrivacyPolicyDialog" @close="showModal = false"/>
+
     <!-- Header -->
     <header class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
       <!-- Header Logo -->
@@ -47,6 +57,9 @@ const toggleDropdown = () => {
         </div>
         <div class="h-fit w-fit p-3 flex items-center justify-center rounded-full">
           <i class="pi pi pi-bell" style="font-size: 1.3rem; color: gray;"></i>
+        </div>
+        <div class="h-fit w-fit flex items-center justify-center rounded-full">
+          <img :src="profilepicture" alt="/" class="rounded-full h-[50px] w-[50px] object-cover"/>
         </div>
       </div>
     </header>
