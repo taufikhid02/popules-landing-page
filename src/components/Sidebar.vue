@@ -43,19 +43,19 @@ import { ref } from 'vue'
             </div>
 
             <!-- Following Accounts -->
-            <div class="w-full bg-red-500 p-2 flex flex-row items-center justify-start gap-3 text-lg">
+            <div class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg">
                 <h1>Following Accounts</h1>
             </div>
             <!-- Following Accounts Info -->
-            <div class="w-full bg-red-500 p-2 flex flex-row items-center justify-start gap-3 text-lg">
-                <h1>You have no following accounts. Starts following here</h1>
+            <div class="w-full text-black/60 font-normal p-2 flex flex-row items-center justify-start gap-3 text-lg">
+                <h1>You have no following accounts. Starts following <span class="hover:text-black/80 cursor-pointer">here</span></h1>
             </div>
         </div>
         
         <!-- Sidebar Footer -->
         <div class="flex w-full h-1/10 self-end">
             <!-- More -->
-            <div class="w-full bg-red-500 p-2 flex flex-row items-center justify-start gap-3 text-lg">
+            <div class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg">
                 <i class="pi pi-bars" style="font-size: 1.3rem; color: gray;"></i>
                 <h1>More</h1>
             </div>

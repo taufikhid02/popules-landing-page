@@ -27,7 +27,7 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
       <!-- Search Bar (Large) -->
       <div class="hidden h-full w-[500px] lg:flex items-center justify-evenly p-3">
         <div class="h-10 w-full flex flex-row items-center ">
-          <input type="text" placeholder="Search Popules" class="w-full h-full bg-gray-100 rounded-3xl text-sm text-black focus:outline-none p-4"></input>
+          <input type="text" placeholder="Search..." class="w-full h-full bg-gray-100 rounded-3xl text-sm text-black focus:outline-none p-4"></input>
           <i class="pi pi-search" style="font-size: 1.3rem; color: gray;"></i>
         </div>
       </div>     
@@ -54,8 +54,8 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
       <div class="h-full w-full flex-1 flex flex-col overflow-x-auto">
 
         <!-- Categories -->
-        <div class="flex w-full h-fit p-3 bg-amber-300">
-          <div class="flex flex-row items-center bg-amber-600 justify-start md:justify-center gap-3 w-full h-fit overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div class="flex w-full h-fit p-3">
+          <div class="flex flex-row items-center justify-start gap-3 w-full h-fit overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <div v-for="(category, index) in categories" :key="index" class="h-[30px] w-fit flex items-center justify-center rounded-full px-3 cursor-pointer hover:bg-gray-50 text-gray-500 hover:text-gray-700 duration-200">
               <p class="text-[18px] font-normal">{{ category }}</p>
             </div>
@@ -63,17 +63,39 @@ const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "
         </div>
 
         <!-- Posts -->
-        <div class="flex flex-col flex-1 w-full h-full bg-gray-600 px-4">
-          <div class="flex flex-col justify-start h-[560px] w-full bg-white overflow-y-auto p-4 gap-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div class="flex flex-1 w-full h-full px-4 overflow-y-auto overflow-x-hidden">
+          <div class="gap-4 h-[560px] w-full bg-red-400 overflow-y-auto space-y-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-          </div> 
+             <!-- <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[200px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[250px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[208px]  break-inside-avoid">hi</div> 
+             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[60px] break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[240px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[210px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[170px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div>          
+             <div class="bg-black flex justify-center items-center p-4 h-[240px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[207px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[70px] break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[80px] break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[100px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[90px] break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[201px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[270px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[300px]  break-inside-avoid">hi</div>
+             <div class="bg-black flex justify-center items-center p-4 h-[220px]  break-inside-avoid">hi</div> -->
+
+            
+            </div> 
         </div>
       </div>
+
     </div>
   </div>
 </template>
