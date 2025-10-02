@@ -1,28 +1,26 @@
 <script setup>
-  import { ref } from 'vue'
-  import Sidebar from './components/Sidebar.vue'
-  import popules_logo from './assets/popules_logo.svg'
-  import Card from './components/Card.vue'
-  import DropdownMenu from './components/DropdownMenu.vue'
-  import AboutUsDialog from './components/AboutUsDialog.vue'
-  import PrivacyPolicyDialog from './components/PrivacyPolicyDialog.vue'
-  import profilepicture from './assets/profilepicture.jpg'
-  import DropdownProfile from './components/DropdownProfile.vue'
+import { ref } from 'vue'
+import Sidebar from './components/Sidebar.vue'
+import popules_logo from './assets/popules_logo.svg'
+import Card from './components/Card.vue'
+import DropdownMenu from './components/DropdownMenu.vue'
+import AboutUsDialog from './components/AboutUsDialog.vue'
+import PrivacyPolicyDialog from './components/PrivacyPolicyDialog.vue'
+import profilepicture from './assets/profilepicture.jpg'
+import DropdownProfile from './components/DropdownProfile.vue'
 
-  const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "Finance", "Lifestyle", "Travel", "Makeup", "Fitness"]
 
-  const dropdownMenu = ref(false)
-  const toggleDropdownMenu = () => {
-    dropdownMenu.value = !dropdownMenu.value
-  }
-
-  const dropdownProfile = ref(false)
-  const toggleDropdownProfile = () => {
-    dropdownProfile.value = !dropdownProfile.value
-  }
-
-  const showAboutUsDialog = ref(false)
-  const showPrivacyPolicyDialog = ref(false)
+const categories = ["All", "Vacancies", "Workplace", "Food", "Design", "Cars", "Finance", "Lifestyle", "Travel", "Makeup", "Fitness"]
+const dropdownMenu = ref(false)
+const toggleDropdownMenu = () => {
+  dropdownMenu.value = !dropdownMenu.value
+}
+const dropdownProfile = ref(false)
+const toggleDropdownProfile = () => {
+  dropdownProfile.value = !dropdownProfile.value
+}
+const showAboutUsDialog = ref(false)
+const showPrivacyPolicyDialog = ref(false)
 
 </script>
 

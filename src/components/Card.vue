@@ -68,7 +68,7 @@ const feedItems = computed(() => feedsData.value ?? [])
         <div v-else-if="isErrorFeeds" class="text-red-600 flex items-center justify-center text-2xl">{{ errorFeeds.message }}</div>
         <MasonryWall v-else-if="isSuccessFeeds" :items="feedItems" :ssr="true" :column-width="200" class="bg-white" :gap="16">
             <template #default="{ item }">
-                <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full h-fit max-w-[300px] object-cover">
+                <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full h-fit object-cover">
                 <div class="p-4 h-fit w-full flex flex-col gap-y-2 text-black">
                     <h1>{{ item?.title }}</h1>
                     <div class="h-f w-full flex flex-row items-center justify-between">
