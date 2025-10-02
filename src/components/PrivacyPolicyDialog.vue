@@ -14,7 +14,7 @@ const emit = defineEmits(['close'])
       <!-- slot lets parent put content -->
       <div class="flex justify-between w-full">
         <h1 class="text-xl text-black font-bold text-start">Privacy Policy</h1>
-        <i class="pi pi-times cursor-pointer rounded-full h-fit w-fit" @click="toggleDropdown" style="font-size: 1.3rem; color: gray;"></i>
+        <i class="pi pi-times cursor-pointer rounded-full h-fit w-fit" @click="$emit('close')" style="font-size: 1.3rem; color: gray;"></i>
       </div>
       <div class="text-sm text-black leading-relaxed text-justify overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] space-y-4">
   <p><b>Last Updated:</b> July 18, 2025</p>

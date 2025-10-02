@@ -31,18 +31,19 @@ import { ref } from 'vue'
     const togglePrivacyPolicyDialog = () => {
         privacyPolicyDialog.value = !privacyPolicyDialog.value
     }
+    const emit = defineEmits(['open-about-dialog', 'open-privacy-dialog'])
 
 </script>
 
 <template>
     <!-- Sidebar -->
-    <div class="hidden md:relative h-full min-w-[300px] md:w-[300px] xl:w-[300px] bg-white font-semibold md:flex flex-col py-2 px-4 items-center gap-y-1">
+    <nav class="hidden md:relative h-full md:w-[250px] xl:w-[300px] bg-white font-semibold md:flex flex-col py-2 px-4 items-center gap-y-1 duration-200">
         <!-- Sidebar Content -->
         <div class="w-full h-[550px] flex  flex-col justify-start gap-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <!-- Navigation Menu -->
             <div class="w-full h-fit flex flex-col gap-y-1">
                 <div v-for="(menu, index) in menus" :key="index">
-                    <div v-if="menu.visible" class="flex w-full bg-white text-black font-medium p-2 flex-row items-center justify-start gap-3 rounded-2xl text-lg cursor-pointer hover:bg-gray-100 duration-200">
+                    <div v-if="menu.visible" class="flex w-full bg-white text-black text-md font-medium p-2 flex-row items-center justify-start gap-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200">
                         <i :class="['pi', menu.icon ]" style="font-size: 1.3rem; color: gray;"></i>
                         <h1>{{ menu.label }}</h1>
                     </div>
@@ -50,17 +51,17 @@ import { ref } from 'vue'
             </div>
         
             <!-- Expand/Shrink Options -->
-            <div @click="showMoreMenu" class="w-full bg-white text-black p-2 flex flex-row items-center justify-start gap-3 rounded-2xl text-lg cursor-pointer hover:bg-gray-100 duration-200">
+            <div @click="showMoreMenu" class="w-full bg-white text-black p-2 flex flex-row items-center justify-start gap-3 rounded-2xl text-md cursor-pointer hover:bg-gray-100 duration-200">
                 <h1>{{ dropdown ? "Less" : "More" }}</h1>
                 <i :class="['pi pi-angle-down', dropdown && 'rotate-180' ]" style="font-size: 1.3rem; color: gray;"></i>
             </div>
 
             <!-- Following Accounts -->
-            <div class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-lg">
+            <div class="w-full text-black p-2 flex flex-row items-center justify-start gap-3 text-md">
                 <h1>Following Accounts</h1>
             </div>
             <!-- Following Accounts Info -->
-            <div class="w-full text-black/60 font-normal p-2 flex flex-row items-center justify-start gap-3 text-lg">
+            <div class="w-full text-black/60 font-normal p-2 flex flex-row items-center justify-start gap-3 text-sm">
                 <h1>You have no following accounts. Starts following <span class="hover:text-black/80 cursor-pointer">here</span></h1>
             </div>
         </div>
@@ -69,10 +70,10 @@ import { ref } from 'vue'
         <div class="flex relative w-full h-1/10 self-end">
             <!-- More -->
             <div v-if="dropdownMore" class="absolute bottom-full origin-bottom mb-1 h-fit max-h-[300px] w-fit p-4 gap-1 bg-white border-2 border-gray-400/20 flex flex-col items-center overflow-y-auto rounded-lg">
-                <div @click="toggleAboutUsDialog" class="text-black font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
+                <div @click="$emit('open-about-dialog')" class="text-black font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
                     <h1>About Us</h1>
                 </div>
-                <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
+                <div @click="$emit('open-privacy-dialog')" class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
                     <h1>Privacy Policy</h1>
                 </div>
                 <div class="text-black  font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">
@@ -96,5 +97,5 @@ import { ref } from 'vue'
             </div>
         </div>
         
-    </div>
+    </nav>
 </template>

@@ -35,7 +35,7 @@
     // ])
 
     const offset = ref(0)
-    const limit = ref(15)
+    const limit = ref(35)
 
     //Fetch chat sessions
     const {
