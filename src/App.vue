@@ -26,7 +26,7 @@ const showPrivacyPolicyDialog = ref(false)
     <PrivacyPolicyDialog :show="showPrivacyPolicyDialog" @close="showModal = false"/>
 
     <!-- Header -->
-    <header class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2 bg-red-500">
+    <header class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
       <!-- Header Logo -->
       <div class="h-full w-fit flex items-center justify-center">      
         <img :src="popules_logo" alt="/" class="h-8 w-full md:h-11 pl-5"/>
