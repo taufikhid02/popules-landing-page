@@ -37,7 +37,7 @@ import { ref } from 'vue'
 
 <template>
     <!-- Sidebar -->
-    <nav class="hidden md:relative h-full md:w-[250px] xl:w-[300px] bg-white font-semibold md:flex flex-col py-2 px-4 items-center gap-y-1 duration-200">
+    <nav class="hidden md:relative h-full md:w-[250px] xl:w-[300px] bg-white font-semibold lg:flex flex-col py-2 px-4 items-center gap-y-1 duration-200">
         <!-- Sidebar Content -->
         <div class="w-full h-full flex  flex-col justify-start gap-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <!-- Navigation Menu -->
