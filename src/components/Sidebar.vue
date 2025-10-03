@@ -39,7 +39,7 @@ import { ref } from 'vue'
     <!-- Sidebar -->
     <nav class="hidden md:relative h-full md:w-[250px] xl:w-[300px] bg-white font-semibold md:flex flex-col py-2 px-4 items-center gap-y-1 duration-200">
         <!-- Sidebar Content -->
-        <div class="w-full h-[550px] flex  flex-col justify-start gap-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div class="w-full h-full flex  flex-col justify-start gap-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <!-- Navigation Menu -->
             <div class="w-full h-fit flex flex-col gap-y-1">
                 <div v-for="(menu, index) in menus" :key="index">
@@ -67,7 +67,7 @@ import { ref } from 'vue'
         </div>
         
         <!-- Sidebar Footer -->
-        <div class="flex relative w-full h-1/10 self-end">
+        <div class="flex relative w-full h-[50px] self-end">
             <!-- More -->
             <div v-if="dropdownMore" class="absolute bottom-full origin-bottom mb-1 h-fit max-h-[300px] w-fit p-4 gap-1 bg-white border-2 border-gray-400/20 flex flex-col items-center overflow-y-auto rounded-lg">
                 <div @click="$emit('open-about-dialog')" class="text-black font-medium flex gap-4 items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer w-full">

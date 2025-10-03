@@ -31,7 +31,7 @@ const showPrivacyPolicyDialog = ref(false)
     <PrivacyPolicyDialog :show="showPrivacyPolicyDialog" @close="showPrivacyPolicyDialog = false"/>
 
     <!-- Header -->
-    <header class="w-full h-[80px] flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
+    <header class="w-full h-1/10 flex items-center justify-between px-4 border-b-2 border-gray-200 gap-x-2">
       <!-- Header Logo -->
       <div class="h-full w-fit flex items-center justify-center">      
         <img :src="popules_logo" alt="/" class="h-8 w-full md:h-11 pl-5"/>
@@ -43,8 +43,6 @@ const showPrivacyPolicyDialog = ref(false)
         <i class="pi pi-bars cursor-pointer" @click="toggleDropdownMenu" style="font-size: 1.3rem; color: gray;"></i>
         <DropdownMenu :dropdown="dropdownMenu"/>
       </div>
-
-      
 
       <!-- Search Bar (Large) -->
       <div class="hidden h-full w-[500px] lg:flex items-center justify-evenly p-3">
@@ -70,8 +68,10 @@ const showPrivacyPolicyDialog = ref(false)
       </div>
     </header>
 
+
+
     <!-- Body -->
-    <div class="flex flex-1 bg-white w-full h-full ">
+    <div class="flex flex-1 bg-white w-full h-9/10 ">
       
       <!-- Body (Sidebar) -->
       <Sidebar @open-about-dialog="showAboutUsDialog = true" @open-privacy-dialog="showPrivacyPolicyDialog = true"/>
@@ -90,7 +90,7 @@ const showPrivacyPolicyDialog = ref(false)
 
         <!-- Posts -->
         <main class="flex flex-1 w-full h-full px-4 overflow-y-auto overflow-x-hidden">
-          <div class="gap-4 h-[560px] w-full  overflow-y-auto space-y-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div class="gap-4 h-full w-full  overflow-y-auto space-y-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <Card/>
           </div> 
         </main>
