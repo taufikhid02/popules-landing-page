@@ -69,7 +69,7 @@ const feedItems = computed(() => feedsData.value ?? [])
         <MasonryWall v-else-if="isSuccessFeeds" :items="feedItems" :ssr="true" :column-width="200" class="bg-white" :gap="16">
             <template #default="{ item }">
                 <div class="shrink-0 relative w-full overflow-hidden rounded-2xl">
-                    <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full h-fit object-cover hover:scale-105 transform transition duration-500 ease-in-out">
+                    <img :src="item?.thumbnail" alt="/" class="rounded-2xl w-full min-h-[250px] max-h-[350px] object-cover hover:scale-105 transform transition duration-500 ease-in-out">
                 </div>
                 <div class="p-4 h-fit w-full flex flex-col gap-y-2 text-black">
                     <h1>{{ item?.title }}</h1>
