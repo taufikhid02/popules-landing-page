@@ -43,7 +43,7 @@ import { ref } from 'vue'
             <!-- Navigation Menu -->
             <div class="w-full h-fit flex flex-col gap-y-1">
                 <div v-for="(menu, index) in menus" :key="index">
-                    <div v-if="menu.visible" class="flex w-full bg-white text-black text-md font-medium p-2 flex-row items-center justify-start gap-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200">
+                    <div v-if="menu.visible" class="flex w-full bg-white text-black text-md font-medium p-2 flex-row items-center justify-start gap-3 rounded-2xl cursor-pointer hover:bg-gray-200 hover:scale-105 duration-200">
                         <i :class="['pi', menu.icon ]" style="font-size: 1.3rem; color: gray;"></i>
                         <h1>{{ menu.label }}</h1>
                     </div>

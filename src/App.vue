@@ -55,13 +55,13 @@ const showPrivacyPolicyDialog = ref(false)
       <!-- Header Icons (Large) -->
       <div class="relative hidden h-full w-fit lg:flex items-center justify-evenly gap-x-4 p-2">
         <button class="bg-pink-600 hover:bg-pink-500 py-2 px-4 rounded-2xl text-xl font-semibold cursor-pointer duration-200">Post</button>
-        <div class="h-fit w-fit p-3 flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer duration-200">
+        <div class="h-fit w-fit p-2 flex items-center justify-center rounded-full hover:bg-gray-300 hover:scale-110 cursor-pointer duration-200">
           <i class="pi pi-th-large" style="font-size: 1.3rem; color: gray;"></i>
         </div>
-        <div class="h-fit w-fit p-3 flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer duration-200">
+        <div class="h-fit w-fit p-2 flex items-center justify-center rounded-full hover:bg-gray-300 hover:scale-110 cursor-pointer duration-200">
           <i class="pi pi pi-bell" style="font-size: 1.3rem; color: gray;"></i>
         </div>
-        <div class="h-fit w-fit flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer duration-200" >
+        <div class="h-fit w-fit flex items-center justify-center rounded-full hover:bg-gray-300 hover:scale-110 cursor-pointer duration-200" >
           <img :src="profilepicture" alt="/" class="rounded-full h-[35px] w-[35px] object-cover" @click="toggleDropdownProfile"/>
         </div>
         <DropdownProfile :dropdown="dropdownProfile"/>
@@ -82,7 +82,7 @@ const showPrivacyPolicyDialog = ref(false)
         <!-- Categories -->
         <div class="flex w-full h-fit p-3">
           <div class="flex flex-row items-center justify-start gap-3 w-full h-fit overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            <div v-for="(category, index) in categories" :key="index" class="h-[30px] w-fit flex items-center justify-center rounded-full px-3 cursor-pointer text-gray-500 hover:bg-gray-50 hover:text-gray-700 duration-200">
+            <div v-for="(category, index) in categories" :key="index" class="h-[30px] w-fit flex items-center justify-center rounded-full px-3 cursor-pointer text-gray-500 hover:bg-gray-200 hover:scale-110 hover:text-gray-700 duration-200">
               <p class="text-md font-normal">{{ category }}</p>
             </div>
           </div>
