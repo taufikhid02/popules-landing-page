@@ -2,13 +2,13 @@
     import MasonryWall from '@yeger/vue-masonry-wall'
     import { computed, ref } from 'vue'
     import { useQuery } from '@tanstack/vue-query'
-    import api from '../utils/axiosInstance'
+    import api from '../axiosInstance'
     import CardItem from './CardItem.vue'
 
     const offset = ref(0)
     const limit = ref(35)
 
-    //Fetch chat sessions
+    //Fetch Feeds Data
     const {
         data: feedsData,
         isPending: isPendingFeeds,
