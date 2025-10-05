@@ -2,7 +2,7 @@
     import MasonryWall from '@yeger/vue-masonry-wall'
     import { computed, ref } from 'vue'
     import { useQuery } from '@tanstack/vue-query'
-    import api from '../axiosInstance'
+    import api from '../utils/axiosInstance'
     import CardItem from './CardItem.vue'
 
     const offset = ref(0)
