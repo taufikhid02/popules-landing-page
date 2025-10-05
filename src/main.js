@@ -1,7 +1,6 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import Test from "./components/Test.vue";
 import { VueQueryPlugin, QueryClient } from "@tanstack/vue-query";
 
 const app = createApp(App);
